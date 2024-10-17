@@ -33,11 +33,11 @@ resource "aws_key_pair" "prasadfive" {
 
 resource "aws_instance" "prasadthree" {
   subnet_id              = aws_subnet.prasadtwo.id
-  ami                    = "ami-0dee22c13ea7a9a67"
+  ami                    = "ami-04a37924ffe27da53"
   instance_type          = "t2.micro"
   key_name               = "prasad_digital_vibes"
   vpc_security_group_ids = [aws_security_group.ten.id]
-  availability_zone      = "ap-southeast-1a"
+  availability_zone      = "ap-south-1a"
   user_data              = <<EOF
 #!/bin/bash
 sudo -i
@@ -54,11 +54,11 @@ EOF
 
 resource "aws_instance" "prasadsix" {
   subnet_id              = aws_subnet.prasadtwo.id
-  ami                    = "ami-0dee22c13ea7a9a67"
+  ami                    = "ami-04a37924ffe27da53"
   instance_type          = "t2.micro"
   key_name               = "prasad_digital_vibes"
   vpc_security_group_ids = [aws_security_group.ten.id]
-  availability_zone      = "ap-southeast-1b"
+  availability_zone      = "ap-south-1b"
   user_data              = <<EOF
 #!/bin/bash
 sudo -i
@@ -74,11 +74,11 @@ EOF
 
 resource "aws_instance" "prasadseen" {
   subnet_id              = aws_subnet.prasadtwo.id
-  ami                    = "ami-0dee22c13ea7a9a67"
+  ami                    = "ami-04a37924ffe27da53"
   instance_type          = "t2.micro"
   key_name               = "prasad_digital_vibes"
   vpc_security_group_ids = [aws_security_group.ten.id]
-  availability_zone      = "ap-southeast-1a"
+  availability_zone      = "ap-south-1a"
   tags = {
     Name = "${local.env}-appserverone_instance"
   }
@@ -86,18 +86,18 @@ resource "aws_instance" "prasadseen" {
 
 resource "aws_instance" "prasadeight" {
   subnet_id              = aws_subnet.prasadtwo.id
-  ami                    = "ami-0dee22c13ea7a9a67"
+  ami                    = "ami-04a37924ffe27da53"
   instance_type          = "t2.micro"
   key_name               = "prasad_digital_vibes"
   vpc_security_group_ids = [aws_security_group.ten.id]
-  availability_zone      = "ap-southeast-1b"
+  availability_zone      = "ap-south-1b"
   tags = {
     Name = "${local.env}-appservertwo_instance"
   }
 }
 
 resource "aws_s3_bucket" "prasadnine" {
-  bucket = "${local.env}431"
+  bucket = "prasaddigitalvibes431"
 }
 
 resource "aws_iam_user" "prasadleven" {
@@ -115,11 +115,11 @@ resource "aws_ebs_volume" "twelve" {
   availability_zone = "ap-southeast-1a"
   size              = 40
   tags = {
-    Name = "${local.env}-ebs"
+    Name = "prasaddigtalvibes-ebs"
   }
 }
 resource "aws_security_group" "ten" {
-  name = "elb-sg"
+  name = "prasadgigitalvibes-sg"
   ingress {
     from_port   = 22
     to_port     = 22
