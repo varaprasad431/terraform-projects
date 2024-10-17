@@ -1,0 +1,36 @@
+pipeline {
+    agent {label 'dso-node'} 
+
+    environment {
+        AWS_ACCESS_KEY_ID     = ""
+        AWS_SECRET_ACCESS_KEY = ""
+    }
+    
+    stages {
+        stage('checkout') {
+            steps {
+                git 'https://github.com/varaprasad431/terraform-projects.git'
+            }
+        }
+        stage('init') {
+            steps {
+                sh 'terraform init'
+            }
+        }
+        stage('validate') {
+            steps {
+                sh 'terraform validate'                
+            }
+        }
+        stage('plan') {
+            steps {
+                sh 'terraform plan'
+            }
+        }
+        stage('action') {
+            steps {
+                sh 'terraform $action --auto-approve'
+            }
+        }
+    }
+}
