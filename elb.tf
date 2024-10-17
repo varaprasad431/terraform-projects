@@ -24,7 +24,7 @@ resource "aws_elb" "prasadten" {
     Name = "raham-tf-elb"
   }
 }
-
+/*
   resource "aws_rds_cluster" "default" {
   cluster_identifier      = "aurora-cluster-demo"
   engine                  = "aurora-mysql"
@@ -36,6 +36,7 @@ resource "aws_elb" "prasadten" {
   backup_retention_period = 5
   preferred_backup_window = "07:00-09:00"
 }
+*/
 
 /*resource "aws_instance" "one" {
   for_each = toset(["one", "two", "three"])
